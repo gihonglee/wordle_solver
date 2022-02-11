@@ -1,21 +1,25 @@
 import pygame
+import game_config as gc
+import wordle_backend as wb
 from pygame import display, event, image
 from time import sleep
 
-import game_config as gc
+
 
 pygame.init()
 display.set_caption('Wordle')
 screen = display.set_mode((gc.SCREEN_SIZE, gc.SCREEN_SIZE))
 # matched = image.load('other_assets/matched.png')
 running = True
-
+w = wb.wordle()
 while running:
     current_events = event.get()
 
     for e in current_events:
         if e.type == pygame.QUIT:
             running = False
+    
+    
 
         # if e.type == pygame.KEYDOWN:
         #     if e.key == pygame.K_ESCAPE:
